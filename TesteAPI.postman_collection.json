@@ -1,0 +1,901 @@
+{
+  "info": {
+    "_postman_id": "626fc120-4d19-48ce-a7d3-95c4a871f354",
+    "name": "TesteAPI",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54212011",
+    "_collection_link": "https://go.postman.co/collection/54212011-626fc120-4d19-48ce-a7d3-95c4a871f354?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "/",
+      "item": []
+    },
+    {
+      "name": "status",
+      "item": [
+        {
+          "name": "Status da API",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlBase}}/status",
+              "host": [
+                "{{urlBase}}"
+              ],
+              "path": [
+                "status"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Sucesso",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{urlBase}}/status",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "status"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 02 Nov 2026 15:49:36 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "62"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "0cc624a1-37f0-4820"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "uvicorn"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a5444a43bb8e480d-GRU"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": \"online\",\n  \"versao\": \"1.0.0\",\n  \"horario\": \"02/11/2026 15:49:36\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "auth",
+      "item": [
+        {
+          "name": "login",
+          "item": [
+            {
+              "name": "Login",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "pm.collectionVariables.set(\"token\", pm.response.json().access_token);"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"usuario\": \"{{login}}\",\r\n  \"senha\": \"{{senha}}\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{urlBase}}/auth/login",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "200 Sucesso",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"usuario\": \"admin\",\r\n  \"senha\": \"admin123\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{urlBase}}/auth/login",
+                      "host": [
+                        "{{urlBase}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": "200"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Mon, 02 Nov 2026 15:50:25 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "174"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "br"
+                    },
+                    {
+                      "key": "rndr-id",
+                      "value": "a4585787-c84e-466e"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "x-render-origin-server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "a5444b6e2885480d-GRU"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc5MzYzNjQyNX0.tIC7Tkgi-x8EW09TP-apDWuH3k95ttgH4NLhGymA1rE\",\n  \"token_type\": \"bearer\",\n  \"expira_em\": \"02/11/2026 16:20:25\"\n}"
+                },
+                {
+                  "name": "401 Usuario ou senha incorreto",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\r\n  \"usuario\": \"admin\",\r\n  \"senha\": \"admin12345\"\r\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{urlBase}}/auth/login",
+                      "host": [
+                        "{{urlBase}}"
+                      ],
+                      "path": [
+                        "auth",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": "401"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Mon, 02 Nov 2026 15:50:52 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "43"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "br"
+                    },
+                    {
+                      "key": "rndr-id",
+                      "value": "a2765532-39a8-4bb6"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "x-render-origin-server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "a5444c161f02480d-GRU"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"detail\": \"Usuario ou senha incorretos\"\n}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "usuarios",
+      "item": [
+        {
+          "name": "eu",
+          "item": [
+            {
+              "name": "Meu Perfil",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{urlBase}}/usuarios/eu",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "usuarios",
+                    "eu"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Listar Usuários (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlBase}}/usuarios",
+              "host": [
+                "{{urlBase}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "produtos",
+      "item": [
+        {
+          "name": "{produto_id}",
+          "item": [
+            {
+              "name": "Substituir produto completo (admin)",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"nome\": \"Super produto\",\r\n  \"preco\": 1000,\r\n  \"estoque\": 15,\r\n  \"categoria\": \"testes\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{urlBase}}/produtos/{{produto_id}}",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "produtos",
+                    "{{produto_id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Atualizar campo do produto (admin)",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"categoria\": \"Trocando esse para teste\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{urlBase}}/produtos/{{produto_id}}",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "produtos",
+                    "{{produto_id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Deletar Produto (Admin)",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{urlBase}}/produtos/{{produto_id}}",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "produtos",
+                    "{{produto_id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Buscar Produto por ID",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{urlBase}}/produtos/{{produto_id}}",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "produtos",
+                    "{{produto_id}}"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "200 Sucesso",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{urlBase}}/produtos/5",
+                      "host": [
+                        "{{urlBase}}"
+                      ],
+                      "path": [
+                        "produtos",
+                        "5"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": "200"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Mon, 02 Nov 2026 16:11:41 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "74"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "br"
+                    },
+                    {
+                      "key": "rndr-id",
+                      "value": "5150ebb9-d3ec-4c62"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "x-render-origin-server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "a5446a9bdd1df223-GRU"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"id\": \"5\",\n  \"nome\": \"Mousepad XL\",\n  \"preco\": 89.9,\n  \"estoque\": 60,\n  \"categoria\": \"Acessorios\"\n}"
+                },
+                {
+                  "name": "404 Produto não encontrado",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{urlBase}}/produtos/9",
+                      "host": [
+                        "{{urlBase}}"
+                      ],
+                      "path": [
+                        "produtos",
+                        "9"
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": ":status",
+                      "value": "404"
+                    },
+                    {
+                      "key": "date",
+                      "value": "Mon, 02 Nov 2026 16:13:48 GMT"
+                    },
+                    {
+                      "key": "content-type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "content-length",
+                      "value": "38"
+                    },
+                    {
+                      "key": "content-encoding",
+                      "value": "br"
+                    },
+                    {
+                      "key": "rndr-id",
+                      "value": "cb5f05fa-9147-4ab4"
+                    },
+                    {
+                      "key": "server",
+                      "value": "cloudflare"
+                    },
+                    {
+                      "key": "vary",
+                      "value": "Accept-Encoding"
+                    },
+                    {
+                      "key": "x-render-origin-server",
+                      "value": "uvicorn"
+                    },
+                    {
+                      "key": "cf-cache-status",
+                      "value": "DYNAMIC"
+                    },
+                    {
+                      "key": "cf-ray",
+                      "value": "a5446db909cb1abf-GRU"
+                    },
+                    {
+                      "key": "alt-svc",
+                      "value": "h3=\":443\"; ma=86400"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n  \"detail\": \"Produto nao encontrado\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Criar Produto (Admin)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.collectionVariables.set(\"produto_id\", pm.response.json().id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"nome\": \"{{$randomFileName}}\",\r\n  \"preco\": 20,\r\n  \"estoque\": {{$randomInt}},\r\n  \"categoria\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlBase}}/produtos",
+              "host": [
+                "{{urlBase}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar Produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlBase}}/produtos",
+              "host": [
+                "{{urlBase}}"
+              ],
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "pedidos",
+      "item": [
+        {
+          "name": "Criar Pedido",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"produto_id\": \"5\",\r\n  \"quantidade\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{urlBase}}/pedidos",
+              "host": [
+                "{{urlBase}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201 Pedido criado",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"produto_id\": \"5\",\r\n  \"quantidade\": 30\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{urlBase}}/pedidos",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "pedidos"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "201"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 02 Nov 2026 16:03:06 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "100"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "4d603f18-8344-4528"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "uvicorn"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a5445e0bebfefc2c-GRU"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": \"63dc39b4\",\n  \"produto_id\": \"5\",\n  \"quantidade\": 30,\n  \"usuario\": \"admin\",\n  \"total\": 2697,\n  \"criado_em\": \"02/11/2026 16:03:06\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Meus Pedidos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{urlBase}}/pedidos",
+              "host": [
+                "{{urlBase}}"
+              ],
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 Sucesso",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{urlBase}}/pedidos",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "pedidos"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 02 Nov 2026 16:02:16 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "102"
+                },
+                {
+                  "key": "content-encoding",
+                  "value": "br"
+                },
+                {
+                  "key": "rndr-id",
+                  "value": "778b912a-fe8d-4ffd"
+                },
+                {
+                  "key": "server",
+                  "value": "cloudflare"
+                },
+                {
+                  "key": "vary",
+                  "value": "Accept-Encoding"
+                },
+                {
+                  "key": "x-render-origin-server",
+                  "value": "uvicorn"
+                },
+                {
+                  "key": "cf-cache-status",
+                  "value": "DYNAMIC"
+                },
+                {
+                  "key": "cf-ray",
+                  "value": "a5445cd1785efc2c-GRU"
+                },
+                {
+                  "key": "alt-svc",
+                  "value": "h3=\":443\"; ma=86400"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": \"0541c98b\",\n    \"produto_id\": \"5\",\n    \"quantidade\": 10,\n    \"usuario\": \"admin\",\n    \"total\": 899,\n    \"criado_em\": \"02/11/2026 15:19:35\"\n  }\n]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "urlBase",
+      "value": ""
+    },
+    {
+      "key": "login",
+      "value": ""
+    },
+    {
+      "key": "senha",
+      "value": ""
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "produto_id",
+      "value": ""
+    }
+  ]
+}
