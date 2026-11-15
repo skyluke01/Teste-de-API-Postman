@@ -120,7 +120,7 @@
                   "script": {
                     "type": "text/javascript",
                     "exec": [
-                      "pm.collectionVariables.set(\"token\", pm.response.json().access_token);"
+                      "const response = pm.response.json();\npm.collectionVariables.set(\"token\", response.access_token);\n"
                     ]
                   }
                 }
@@ -426,24 +426,6 @@
               "response": []
             },
             {
-              "name": "Deletar Produto (Admin)",
-              "request": {
-                "method": "DELETE",
-                "header": [],
-                "url": {
-                  "raw": "{{urlBase}}/produtos/{{produto_id}}",
-                  "host": [
-                    "{{urlBase}}"
-                  ],
-                  "path": [
-                    "produtos",
-                    "{{produto_id}}"
-                  ]
-                }
-              },
-              "response": []
-            },
-            {
               "name": "Buscar Produto por ID",
               "request": {
                 "method": "GET",
@@ -605,6 +587,24 @@
                   "body": "{\n  \"detail\": \"Produto nao encontrado\"\n}"
                 }
               ]
+            },
+            {
+              "name": "Deletar Produto (Admin)",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{urlBase}}/produtos/{{produto_id}}",
+                  "host": [
+                    "{{urlBase}}"
+                  ],
+                  "path": [
+                    "produtos",
+                    "{{produto_id}}"
+                  ]
+                }
+              },
+              "response": []
             }
           ]
         },
